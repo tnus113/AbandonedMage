@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896789ed3befbf349b2383655510f1e5, type: 3}
+  m_Name: test
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Hello, player!!!!!!!!......
+  - Welcome to my. world!!!!!!!!!!!!!!
+  responses:
+  - responseText: Yes
+    dialogueObject: {fileID: 11400000, guid: 7210b0a623c73cf449ad7fc68a63f66e, type: 2}
+  - responseText: No
+    dialogueObject: {fileID: 11400000, guid: 58f67bd02cdeeab42935f3cf124dd811, type: 2}
+  - responseText: abg
+    dialogueObject: {fileID: 11400000, guid: 58f67bd02cdeeab42935f3cf124dd811, type: 2}

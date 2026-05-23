@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712d37eb2e7513a4295977dd8f24d36f, type: 3}
+  m_Name: BasicAttackData
+  m_EditorClassIdentifier: 
+  skillPrefab: {fileID: 6216539357733518918, guid: 0e0e603348da77244b3b262a418e1f50,
+    type: 3}
+  skillName: Attack
+  soundEffectName: Attack
+  commandType: 1
+  damage: 5
+  cooldownTime: 0
