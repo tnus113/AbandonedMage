@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2044693596297977444}
   - component: {fileID: 5340149093513242227}
   - component: {fileID: 4263000678928116216}
-  - component: {fileID: 4487761002886015562}
+  - component: {fileID: 3025765808675716099}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4487761002886015562
+--- !u!114 &3025765808675716099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +236,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365254961665493327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fb139fa4dcb0a14a8afdebc8a9206f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  hoverSoundName: Hover
+  clickSoundName: Click
