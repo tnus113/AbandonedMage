@@ -68,7 +68,38 @@ public class HealthSystem : MonoBehaviour
         isDead = true;
 		animator?.SetTrigger("die");
         GetComponent<Collider>().enabled = false;
+
+        if (gameObject.CompareTag("Enemy") && GetComponent<Flamethrower>() != null)
+        {
+            UnlockFireballForPlayer();
+        }
 	}
+
+    private void UnlockFireballForPlayer()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            PlayerActionHandler actionHandler = playerObj.GetComponent<PlayerActionHandler>();
+            PlayerMovement playerMovement = playerObj.GetComponent<PlayerMovement>();
+
+            if (actionHandler != null)
+            {
+                actionHandler.UnlockSkill("Fireball");
+            }
+
+            if (playerMovement != null && playerMovement.DialogueUI != null)
+            {
+                DialogueObject dialogue = ScriptableObject.CreateInstance<DialogueObject>();
+                dialogue.Initialize(new string[] { 
+                    "Congratulations! You have defeated the Fire Boss and absorbed its flames.",
+                    "<< New skill learned: Fireball! >>",
+                    "<< Say 'Fireball' or 'Fire' to cast this skill. >>"
+                });
+                playerMovement.DialogueUI.ShowDialogue(dialogue);
+            }
+        }
+    }
 
     private void UpdateUI()
     {

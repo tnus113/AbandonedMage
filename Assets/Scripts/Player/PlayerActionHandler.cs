@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -113,6 +113,20 @@ public class PlayerActionHandler : MonoBehaviour, IDataPersistence
 		if (skill != null && !equippedSkills.Contains(skill))
 		{
 			equippedSkills.Add(skill);
+		}
+	}
+
+	public void UnlockSkill(string skillName)
+	{
+		SkillData skill = allSkills.Find(s => s.skillName == skillName);
+		if (skill != null)
+		{
+			EquipSkill(skill);
+			DataPersistenceManager.instance?.SaveGame();
+		}
+		else
+		{
+			Debug.LogWarning($"Skill {skillName} not found in allSkills database.");
 		}
 	}
 }
