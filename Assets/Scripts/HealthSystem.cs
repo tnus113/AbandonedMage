@@ -74,7 +74,8 @@ public class HealthSystem : MonoBehaviour
         {
             UnlockFireballForPlayer();
             Destroy(gameObject);
-            OnBossDefeated?.Invoke();
+            healthBar.gameObject.SetActive(false);
+			OnBossDefeated?.Invoke();
         }
 	}
 
