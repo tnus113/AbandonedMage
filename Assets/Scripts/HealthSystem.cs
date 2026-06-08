@@ -12,6 +12,7 @@ public class HealthSystem : MonoBehaviour
     public Slider healthBar;
 
     public event Action<float> OnHealthChanged;
+    public static event Action OnBossDefeated;
 
     public bool isDead { get; private set; } = false;
     public bool isInvincible = false;
@@ -72,6 +73,8 @@ public class HealthSystem : MonoBehaviour
         if (gameObject.CompareTag("Enemy") && GetComponent<Flamethrower>() != null)
         {
             UnlockFireballForPlayer();
+            Destroy(gameObject);
+            OnBossDefeated?.Invoke();
         }
 	}
 

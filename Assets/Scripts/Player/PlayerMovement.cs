@@ -23,6 +23,45 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	private CharacterController characterController;
 	private Animator animator;
+	private bool isTransitioningScene = false;
+
+	private void OnEnable()
+	{
+		UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDisable()
+	{
+		UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	public void PrepareForSceneTransition()
+	{
+		isTransitioningScene = true;
+	}
+
+	private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+	{
+		if (dialogueUI == null)
+		{
+			dialogueUI = FindObjectOfType<DialogueUI>();
+		}
+
+		GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
+		if (spawnPoint == null)
+		{
+			spawnPoint = GameObject.FindWithTag("Respawn");
+		}
+
+		if (spawnPoint != null)
+		{
+			if (characterController != null) characterController.enabled = false;
+			this.transform.position = spawnPoint.transform.position;
+			this.transform.rotation = spawnPoint.transform.rotation;
+			Physics.SyncTransforms();
+			if (characterController != null) characterController.enabled = true;
+		}
+	}
 
 	void Start()
 	{
@@ -32,6 +71,12 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	public void LoadData(GameData data)
 	{
+		if (isTransitioningScene)
+		{
+			isTransitioningScene = false;
+			return;
+		}
+
 		if (characterController != null) characterController.enabled = false;
 		this.transform.position = data.playerPosition;
 		Physics.SyncTransforms();
@@ -45,7 +90,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	void Update()
 	{
-		if (dialogueUI.isOpen)
+		if (dialogueUI != null && dialogueUI.isOpen)
 		{
 			return;
 		}
