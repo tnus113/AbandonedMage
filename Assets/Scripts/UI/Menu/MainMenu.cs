@@ -57,7 +57,18 @@ public class MainMenu : MonoBehaviour
 	public void OnContinueClicked()
 	{
 		DataPersistenceManager.instance.LoadGame();
-		Play("GameScene", "CrossFade", "Game");
+		string lastScene = DataPersistenceManager.instance.GetSavedSceneName();
+		string musicTrack = (lastScene == "CutScene") ? "CutScene" : "Game";
+		
+		if (lastScene != "GameScene" && lastScene != "CutScene")
+		{
+			LevelManager.Instance.LoadSceneChain("GameScene", lastScene, "CrossFade");
+			MusicManager.Instance.PlayMusic(musicTrack);
+		}
+		else
+		{
+			Play(lastScene, "CrossFade", musicTrack);
+		}
 	}
 
 	public void OnNewGameClicked()

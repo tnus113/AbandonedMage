@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -24,6 +25,37 @@ public class HealthSystem : MonoBehaviour
         animator = GetComponent<Animator>();
 		currentHealth = maxHealth;
         UpdateUI();
+	}
+
+	private void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		if (gameObject.CompareTag("Player") && isDead)
+		{
+			ResetHealth();
+		}
+	}
+
+	public void ResetHealth()
+	{
+		isDead = false;
+		currentHealth = maxHealth;
+		GetComponent<Collider>().enabled = true;
+		if (animator != null)
+		{
+			animator.Rebind();
+			animator.Update(0f);
+		}
+		UpdateUI();
 	}
 
     public void TakeDamage(float amount)

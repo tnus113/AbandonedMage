@@ -55,6 +55,11 @@ public class PlayerActionHandler : MonoBehaviour, IDataPersistence
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
+			PlayerCommand cmd = PlayerCommand.Tornado;
+			HandleCommand(cmd);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
 			PlayerCommand cmd = PlayerCommand.WindShield;
 			HandleCommand(cmd);
 		}

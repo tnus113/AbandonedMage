@@ -40,8 +40,20 @@ public class DataPersistenceManager : MonoBehaviour
 
 	public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
+		EnsureEventSystemExists();
 		this.dataPersistenceObjects = FindAllDataPersistenceObjects();
 		LoadGame();
+	}
+
+	private void EnsureEventSystemExists()
+	{
+		if (FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
+		{
+			GameObject eventSystem = new GameObject("EventSystem");
+			eventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
+			eventSystem.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
+			Debug.Log("Created dynamic EventSystem in scene: " + SceneManager.GetActiveScene().name);
+		}
 	}
 
 	public void NewGame()
@@ -66,8 +78,24 @@ public class DataPersistenceManager : MonoBehaviour
 
 	public void SaveGame()
 	{
+		if (gameData != null)
+		{
+			string activeSceneName = SceneManager.GetActiveScene().name;
+			if (activeSceneName != "MenuScene")
+			{
+				gameData.lastSceneName = activeSceneName;
+			}
+		}
+
 		foreach (IDataPersistence dataPersistenceObj  in dataPersistenceObjects)
 		{
+			if (dataPersistenceObj == null) continue;
+
+			if (dataPersistenceObj is UnityEngine.Object unityObject && unityObject == null)
+			{
+				continue;
+			}
+
 			dataPersistenceObj.SaveData(ref gameData);
 		}
 		Debug.Log("Saving game data to: " + Application.persistentDataPath + "/" + fileName);
@@ -89,5 +117,14 @@ public class DataPersistenceManager : MonoBehaviour
 	public bool HasGameData()
 	{
 		return dataHandler != null && dataHandler.HasGameData();
+	}
+
+	public string GetSavedSceneName()
+	{
+		if (gameData != null && !string.IsNullOrEmpty(gameData.lastSceneName))
+		{
+			return gameData.lastSceneName;
+		}
+		return "GameScene";
 	}
 }

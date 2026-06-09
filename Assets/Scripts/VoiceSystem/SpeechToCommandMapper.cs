@@ -32,6 +32,8 @@ public class SpeechToCommandMapper : MonoBehaviour
 
 		commandMap.Add("shield", PlayerCommand.WindShield);
 		commandMap.Add("windshield", PlayerCommand.WindShield);
+
+		commandMap.Add("tornado", PlayerCommand.Tornado);
 	}
 
 	//nhan dien giong noi tra ve lenh tuong ung, neu ko co lenh tra ve none

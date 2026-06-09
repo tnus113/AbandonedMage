@@ -14,12 +14,33 @@ public class DeathScreen : MonoBehaviour
 
 	private void Start()
 	{
+		ResetDeathScreen();
+		Time.timeScale = 1f;
+	}
+
+	private void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		ResetDeathScreen();
+	}
+
+	private void ResetDeathScreen()
+	{
+		canRestart = false;
 		if (canvasGroup != null)
 		{
 			canvasGroup.alpha = 0f;
 			canvasGroup.gameObject.SetActive(false);
 		}
-		Time.timeScale = 1f;
 	}
 
 	private void Update()

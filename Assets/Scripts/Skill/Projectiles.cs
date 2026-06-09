@@ -7,6 +7,7 @@ public class Projectiles : MonoBehaviour
 {
     public float speed = 20f;
     public float lifetime = 5f;
+	public float damageAmount = 25f;
 
 	public GameObject explosionEffect;
 
@@ -23,7 +24,7 @@ public class Projectiles : MonoBehaviour
 	{
 		if (other.CompareTag("Enemy"))
 		{
-			float damageAmount = 20f;
+			
 			HealthSystem enemyHealth = other.GetComponent<HealthSystem>();
 			if (enemyHealth != null)
 			{

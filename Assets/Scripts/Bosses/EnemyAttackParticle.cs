@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAttackParticle : MonoBehaviour
 {
 	private ParticleSystem particle;
-	private HealthSystem healthSystem;
 
 	private void Start()
 	{
@@ -14,10 +13,10 @@ public class EnemyAttackParticle : MonoBehaviour
 
 	private void OnParticleCollision(GameObject other)
 	{
-		if (other.GetComponent<Collider>().CompareTag("Player"))
+		HealthSystem playerHealth = other.GetComponentInParent<HealthSystem>();
+		if (playerHealth != null && playerHealth.CompareTag("Player"))
 		{
-			healthSystem = other.GetComponent<HealthSystem>();
-			healthSystem?.TakeDamage(10);
+			playerHealth.TakeDamage(10);
 		}
 	}
 }
