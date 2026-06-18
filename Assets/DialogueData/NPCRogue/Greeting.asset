@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Greeting
   m_EditorClassIdentifier: 
   dialogue:
-  - Hmmm
+  - Hey! Where're you going?
   responses:
-  - responseText: Hmmmmm
+  - responseText: Defeat the fire dragon?
     dialogueObject: {fileID: 11400000, guid: e8e5d018f18737b42bac070fda848c23, type: 2}

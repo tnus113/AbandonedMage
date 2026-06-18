@@ -63,10 +63,13 @@ public class DeathScreen : MonoBehaviour
 	private IEnumerator FadeInCoroutine()
 	{
 		yield return new WaitForSeconds(delayBeforeFade);
+		
+		Time.timeScale = 0f;
+		
 		float elapsedTime = 0f;
 		while (elapsedTime < fadeDuration)
 		{
-			elapsedTime += Time.deltaTime;
+			elapsedTime += Time.unscaledDeltaTime;
 			canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
 			yield return null;
 		}

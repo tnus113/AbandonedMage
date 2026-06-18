@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3098405655799606855}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 024dd8249796a1a4191ccedb4c42f565, type: 2}
+  promptOffset: {x: 0, y: 2.2, z: 0}
 --- !u!114 &3098405655799606855
 MonoBehaviour:
   m_ObjectHideFlags: 0

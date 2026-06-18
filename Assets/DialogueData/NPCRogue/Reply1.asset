@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Reply1
   m_EditorClassIdentifier: 
   dialogue:
-  - << Unlocked tornado skill. Say "tornado" to cast >>
-  responses: []
+  - WHAT!? You are going to defeat the fire dragon? Can I go with you?
+  responses:
+  - responseText: Um... Sure?
+    dialogueObject: {fileID: 11400000, guid: 991b5ee4dffe2b946b0fb08ebf5a0730, type: 2}

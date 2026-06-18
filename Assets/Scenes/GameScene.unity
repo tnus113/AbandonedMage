@@ -2793,7 +2793,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 11400000, guid: 2eec412dc0c782e43a273fb01f3e8439,
+      objectReference: {fileID: 11400000, guid: e8e5d018f18737b42bac070fda848c23,
         type: 2}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2803,7 +2803,7 @@ PrefabInstance:
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].name
-      value: Hmmmmm
+      value: Um... Sure?
       objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2813,7 +2813,7 @@ PrefabInstance:
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2824,7 +2824,7 @@ PrefabInstance:
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1828057787}
+      objectReference: {fileID: 361698280}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2833,7 +2833,7 @@ PrefabInstance:
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EquipSkill
+      value: StartGuiding
       objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2843,7 +2843,7 @@ PrefabInstance:
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerActionHandler, Assembly-CSharp
+      value: NPCAI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2854,8 +2854,7 @@ PrefabInstance:
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: a4c04ea15609b194fbd1978370e7e949,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -2865,7 +2864,7 @@ PrefabInstance:
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: SkillData, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3098405655799606855, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
         type: 3}
@@ -2891,7 +2890,19 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 346651697}
-    m_AddedComponents: []
+    - targetCorrespondingSourceObject: {fileID: 668301494381884481, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1178521970}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3971282832787342684, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 361698281}
+    - targetCorrespondingSourceObject: {fileID: 3971282832787342684, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 361698280}
   m_SourcePrefab: {fileID: 100100000, guid: 11197f4dacf9c6a4fb97c081ed6fdead, type: 3}
 --- !u!114 &361698277 stripped
 MonoBehaviour:
@@ -2899,7 +2910,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 361698276}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 361698279}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfb7439cd401a914e8ed485343be579b, type: 3}
@@ -2911,6 +2922,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 361698276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361698279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3971282832787342684, guid: 11197f4dacf9c6a4fb97c081ed6fdead,
+    type: 3}
+  m_PrefabInstance: {fileID: 361698276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361698280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361698279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff6eaca2dc1243409803f1371ba2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  bossTransform: {fileID: 1021352707}
+  projectilePrefab: {fileID: 6216539357733518918, guid: 0e0e603348da77244b3b262a418e1f50,
+    type: 3}
+  firePoint: {fileID: 1178521970}
+  walkSpeed: 5
+  runSpeed: 5.5
+  followDistance: 3
+  maxPlayerDistance: 20
+  resumeDistance: 10
+  arriveAtBossRange: 20
+  minCombatRange: 15
+  maxCombatRange: 20
+  attackCooldown: 5
+  attackSoundName: Fireball
+--- !u!195 &361698281
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361698279}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &409459240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5434,6 +5500,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174117809}
   m_CullTransparentMesh: 1
+--- !u!1 &1178521969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178521970}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1178521970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178521969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 1.21, z: 0.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 361698278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210054039
 GameObject:
   m_ObjectHideFlags: 0

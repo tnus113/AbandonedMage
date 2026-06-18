@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 896789ed3befbf349b2383655510f1e5, type: 3}
-  m_Name: Done
+  m_Name: Reply2
   m_EditorClassIdentifier: 
   dialogue:
-  - LET'S GOOOOO!!!!!
+  - Nice!
   responses: []
